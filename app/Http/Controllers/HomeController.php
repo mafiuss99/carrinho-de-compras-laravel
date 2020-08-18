@@ -26,7 +26,7 @@ class HomeController extends Controller
             'ativo' => 'S'
         ])->get();
 
-        return view('home.index', compact('registros'));
+        return view('home', compact('registros'));
     }
 
     public function produto($id = null){
