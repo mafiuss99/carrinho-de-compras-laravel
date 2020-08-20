@@ -303,6 +303,10 @@ textarea.input {
   color:#D10024;
 }
 
+.section#generos .title{
+  color: white;
+}
+
 .section-title .section-nav {
   float: right;
 }
@@ -1410,6 +1414,14 @@ header{
   text-transform: uppercase;
   font-size: 12px;
 }
+/*=========================================================
+  Social
+  
+===========================================================*/
+
+.section#sociais{
+  
+}
 
 /*=========================================================
 	08 -> PRODUCT DETAILS PAGE
@@ -2035,7 +2047,7 @@ header{
 }
 
 #bottom-footer {
-  background: #1E1F29;
+  background: black;
 }
 
 .footer {

@@ -4,12 +4,12 @@
 @section('pagina_conteudo')
 
 
-<section class="section banner-principal-home" id="banner-principal" style="background-image: url('img/banners/principal-home.png')">
-	<img src="img/pixel-hacker.png" alt="">
-</section>
+		<section class="section banner-principal-home" id="banner-principal" style="background-image: url('img/banners/principal-home.png')">
+			<img src="img/pixel-hacker.png" alt="">
+		</section>
 
 
-<section class="section" id="lancamentos">
+		<section class="section" id="lancamentos">
 			<!-- container -->
 			<div class="container">
 				<h3 class="title text-center">Lançamentos</h3>
@@ -27,7 +27,7 @@
 								</div>
 								<div class="product-body">
 									<p class="product-category">Category</p>
-									<h3 class="product-name"><a href="{{ route('produto', $registro->id) }}" tabindex="-1">{{ $registro->nome }}</h3>
+									<h3 class="product-name"><a href="{{ route('produto', $registro->id) }}" tabindex="-1">{{ $registro->nome }}</a></h3>
 									<h4 class="product-price">R$ {{ number_format($registro->valor, 2, ',', '.' )}}<del class="product-old-price">R$ {{ number_format($registro->valor, 2, ',', '.' )}}</del></h4>
 									<!--<div class="product-rating">
 										<i class="fa fa-star"></i>
@@ -61,6 +61,9 @@
 			<!-- container -->
 			<div class="container">
 				<h3 class="text-center title">Gêneros</h3>
+				<p class="text-center text-white">
+					De Aventura a Terror, de Romance à Comédia, aqui temos todos os tipos de gêneros para todos os tipos de gostos
+				</p>
 				<!-- row -->
 				<div class="row">
 					<!-- shop -->
@@ -154,6 +157,9 @@
 			<!-- container -->
 			<div class="container">
 				<h3 class="title text-center">Filmes Mais buscados</h3>
+				<p class="text-center"> 
+					Os filmes que todos estão buscando...
+				</p>
 				<!-- row -->
 				<div class="row">
 					@foreach($registros as $registro)
@@ -164,7 +170,7 @@
 								</div>
 								<div class="product-body">
 									<p class="product-category">Category</p>
-									<h3 class="product-name"><a href="{{ route('produto', $registro->id) }}" tabindex="-1">{{ $registro->nome }}</h3>
+									<h3 class="product-name"><a href="{{ route('produto', $registro->id) }}" tabindex="-1">{{ $registro->nome }}</a></h3>
 									<h4 class="product-price">R$ {{ number_format($registro->valor, 2, ',', '.' )}}<del class="product-old-price">R$ {{ number_format($registro->valor, 2, ',', '.' )}}</del></h4>
 									<!--<div class="product-rating">
 										<i class="fa fa-star"></i>
@@ -204,13 +210,12 @@
 				</div>
 			</div>
 		</section>-->
-		
 
-		<section class="section" id="marcas">
+		<section class="section" id="estudios">
 			<!-- container -->
 			<div class="container">
 				<h3 class="title text-center">Principais Estúdios</h3>
-				<p class="tex"> 
+				<p class="text-center text-black-50"> 
 					Aqui você encontra os filmes dos principais estudios de cinema do mundo como a Warner, Universal, Sony, Paramount e outras...
 				</p>
 				<!-- row -->
@@ -235,9 +240,8 @@
 					<div class="col-md-6">
 						<p>
 							<b>PARADO AÍ</b>
-
-Ainda não segue o Cine Store nas Redes Sociais? 
-Melhor você fazê-lo, se não vai ter que se explicar para o Imperador...
+							Ainda não segue o Cine Store nas Redes Sociais? 
+							Melhor você fazê-lo, se não vai ter que se explicar para o Imperador...
 						</p>
 					</div>
 				</div>
