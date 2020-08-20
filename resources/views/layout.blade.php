@@ -16,44 +16,11 @@
     <link href="/css/temas/principal/slick.css" rel="stylesheet">
     <link href="/css/temas/principal/style.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/css/temas/principal/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
     <!-- HEADER -->
 	<header>
-			<!-- TOP HEADER -->
-			<div id="top-header">
-				<div class="container">
-                    <div class="row">
-                    <ul class="header-links pull-left">
-						<li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
-						<li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
-						<li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
-					</ul>
-					<ul class="header-links pull-right">
-						<li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
-						@if(Auth::guest())
-                        <li><a href="{{ url('/login') }}">Entrar</a></li>
-                        <li><a href="{{ url('/register') }}">Cadastere-se</a></li>
-                        
-                    @else 
-                        <li>
-                            <a class="dropdown-button" href="#!" data-activities="dropdown-user">
-                                Olá {{ Auth::user()->name }} ! <i class="material-icons right">arrow_drop_down</i>
-                            </a>
-                            -
-                            <a href="{{ url('/logout') }}" onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();">
-                                Sair
-                            </a>
-                        </li>
-                    @endif
-					</ul>
-                    </div>
-					
-				</div>
-			</div>
-			<!-- /TOP HEADER -->
-
 			<!-- MAIN HEADER -->
 			<div id="header">
 				<!-- container -->
@@ -64,7 +31,7 @@
 						<div class="col-md-3">
 							<div class="header-logo">
 								<a href="#" class="logo">
-									<img src="https://technext.github.io/electro/img/logo.png" alt="" width="">
+									<img src="img/logo/logo.png" alt="" width="">
 								</a>
 							</div>
 						</div>
@@ -73,14 +40,9 @@
 						<!-- SEARCH BAR -->
 						<div class="col-md-6">
 							<div class="header-search">
-								<form>
-									<select class="input-select">
-										<option value="0">All Categories</option>
-										<option value="1">Category 01</option>
-										<option value="1">Category 02</option>
-									</select>
+								<form class="form-header">
 									<input class="input" placeholder="Search here">
-									<button class="search-btn">Search</button>
+									<button class="search-btn">Pesquisar</button>
 								</form>
 							</div>
 						</div>
@@ -89,15 +51,6 @@
 						<!-- ACCOUNT -->
 						<div class="col-md-3 clearfix">
 							<div class="header-ctn">
-								<!-- Wishlist -->
-								<div>
-									<a href="#">
-										<i class="fa fa-heart-o"></i>
-										<span>Lista de Desejos</span>
-										<div class="qty">2</div>
-									</a>
-								</div>
-								<!-- /Wishlist -->
 
 								<!-- Cart -->
                                 <div>
@@ -107,6 +60,15 @@
 										<div class="qty">3</div>
 									</a>
                                 </div>
+
+								<!-- Wishlist -->
+								<div>
+									<a href="#">
+										<i class="fa fa-heart-o"></i>
+										<span>Minha Conta</span>
+									</a>
+								</div>
+								<!-- /Wishlist -->
 
 								<!--<div class="dropdown">
 									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" href="{{ route('carrinho.index') }}">
@@ -167,10 +129,7 @@
 				<!-- container -->
 			</div>
 			<!-- /MAIN HEADER -->
-		</header>
-		<!-- /HEADER -->
-
-        <nav id="navigation">
+			<nav id="navigation">
 			<!-- container -->
 			<div class="container">
 				<!-- responsive-nav -->
@@ -191,6 +150,10 @@
 			</div>
 			<!-- /container -->
 		</nav>
+		</header>
+		<!-- /HEADER -->
+
+        
     <main>
         @yield('pagina_conteudo')
 
@@ -199,14 +162,39 @@
                 {{ csrf_field() }}
             </form>
         @endif
-    </main>
-    <footer class="page-footer blue">
-        <div class="footer-copyright">
-            <div class="container">
-                Desenvolvido para Curso de carrinho de compras com laravel
-            </div>
-        </div>
-    </footer>   
+	</main>
+	
+    <!-- FOOTER -->
+		<footer id="footer">
+
+			<!-- bottom footer -->
+			<div id="bottom-footer" class="section">
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<ul class="footer-payments">
+								<li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
+								<li><a href="#"><i class="fa fa-credit-card"></i></a></li>
+								<li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
+								<li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
+								<li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
+								<li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
+							</ul>
+							<span class="copyright">
+								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+								Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							</span>
+						</div>
+					</div>
+						<!-- /row -->
+				</div>
+				<!-- /container -->
+			</div>
+			<!-- /bottom footer -->
+		</footer>
+		<!-- /FOOTER --> 
     <script type="text/javascript" src="{{ asset('js/jquery-3.5.1.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
     <!-- Import Jquery before materialize.js-->

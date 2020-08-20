@@ -68,7 +68,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  color: #2B2D42;
+  color: white;
   font-weight: 500;
   -webkit-transition: 0.2s color;
   transition: 0.2s color;
@@ -296,16 +296,11 @@ textarea.input {
   padding-bottom: 30px;
 }
 
-.section-title {
-  position: relative;
-  margin-bottom: 30px;
-  margin-top: 15px;
-}
-
-.section-title .title {
-  display: inline-block;
+.section .title {
+  text-align: center;
   text-transform: uppercase;
-  margin: 0px;
+  margin: 20px 0px;
+  color:#D10024;
 }
 
 .section-title .section-nav {
@@ -409,6 +404,11 @@ textarea.input {
 /*----------------------------*\
 	Top header
 \*----------------------------*/
+header{
+  position: fixed;
+  width: 100%;
+  z-index: 999999;
+}
 
 #top-header {
   padding-top: 10px;
@@ -446,7 +446,12 @@ textarea.input {
 #header {
   padding-top: 15px;
   padding-bottom: 15px;
-  background-color: #15161D;
+  background-color: black;
+}
+
+#header .form-header{
+  display: flex;
+  justify-content: center;
 }
 
 .header-logo {
@@ -477,6 +482,7 @@ textarea.input {
 .header-search form .input {
   width: calc(100% - 260px);
   margin-right: -4px;
+  border-radius: 40px 0 0 40px;
 }
 
 .header-search form .search-btn {
@@ -541,6 +547,19 @@ textarea.input {
   display: none;
 }
 
+.banner-principal-home{
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 180px;
+}
+
+.banner-principal-home img{
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
 .cart-dropdown {
   position: absolute;
   width: 300px;
@@ -552,6 +571,11 @@ textarea.input {
   right: 0;
   opacity: 0;
   visibility: hidden;
+}
+
+#propaganda .col-md-12{
+    display: flex;
+    justify-content: center;
 }
 
 .dropdown.open>.cart-dropdown {
@@ -620,9 +644,7 @@ textarea.input {
 ===========================================================*/
 
 #navigation {
-  background: #FFF;
-  border-bottom: 2px solid #E4E7ED;
-  border-top: 3px solid #D10024;
+  background: #D10024;
 }
 
 /*----------------------------*\
@@ -638,7 +660,7 @@ textarea.input {
 }
 
 .main-nav>li>a:hover, .main-nav>li>a:focus, .main-nav>li.active>a {
-  color: #D10024;
+  color: black;
   background-color: transparent;
 }
 
@@ -711,11 +733,16 @@ textarea.input {
 /*=========================================================
 	04 -> CATEGORY SHOP
 ===========================================================*/
+#generos{
+  background: black;
+}
+
 
 .shop {
   position: relative;
   overflow: hidden;
   margin: 15px 0px;
+  z-index: 99999;
 }
 
 .shop:before {
@@ -724,7 +751,7 @@ textarea.input {
   top: 0;
   bottom: 0;
   left: 0px;
-  width: 60%;
+  width: 43%;
   background: #D10024;
   opacity: 0.9;
   -webkit-transform: skewX(-45deg);
@@ -919,6 +946,7 @@ textarea.input {
 
 .product .product-body .product-name>a {
   font-weight: 700;
+  color:black;
 }
 
 .product .product-body .product-name>a:hover, .product .product-body .product-name>a:focus {
