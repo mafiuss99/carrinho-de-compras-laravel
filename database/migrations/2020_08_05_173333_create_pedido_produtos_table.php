@@ -14,7 +14,7 @@ class CreatePedidoProdutosTable extends Migration
     public function up()
     {
         Schema::create('pedido_produtos', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->unsigned();
             $table->integer('pedido_id')->unsigned(); // usigned: somente inteiros positivos
             $table->integer('produto_id')->unsigned(); // usigned: somente inteiros positivos
             $table->enum('status', ['RE', 'PA', 'CA']); //Reservado, Pago, Cancelado

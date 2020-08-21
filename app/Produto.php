@@ -3,14 +3,26 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Estudio;
+
 
 class Produto extends Model
 {
     protected $fillable = [
-        'nome',
-        'descricao',
-        'imagem',
+        'titulo',
+        'sinopse',
+        'capa',
+        'trailer',
         'valor',
-        'ativo'
+        'classificacao',
+        'ativo',
+        'destaque',
+        'estudio_id',
+        'ano',
+        'lancamento'
     ];
+    public function estudio()
+    {
+        return $this->hasOne('App\Estudio', 'estudio_id', 'id');
+    }
 }

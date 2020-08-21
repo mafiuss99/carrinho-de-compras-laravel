@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Produto;
-
+use App\Genero;
+use App\Estudio;
 
 class HomeController extends Controller
 {
@@ -22,11 +23,22 @@ class HomeController extends Controller
     public function index()
     {
         //Consulta de todos os produtos cujo ativo é igual a 'S'
-        $registros = Produto::where([
-            'ativo' => 'S'
+        $lancamentos = Produto::where([
+            'lancamento' => 'S',
+            'ativo' => 'S',
+            'destaque' => 'S'
         ])->get();
 
-        return view('home', compact('registros'));
+        $generos = Genero::all();
+        
+        $destaques = Produto::where([
+            'ativo' => 'S',
+            'destaque' => 'S'
+        ])->get();
+
+        $estudios = Estudio::all();
+
+        return view('home', compact('lancamentos', 'generos', 'destaques', 'estudios'));
     }
 
     public function produto($id = null){

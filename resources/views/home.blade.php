@@ -19,16 +19,16 @@
 				</p>
 				<!-- row -->
 				<div class="row">
-					@foreach($registros as $registro)
+					@foreach($lancamentos as $lancamento)
 						<div class="col-md-3">
 							<div class="product"  style="width: 263px;">
 								<div class="product-img">
-									<img src="img/capas/coringa.jpg" alt="">
+									<img src="{{ $lancamento->capa }}" alt="">
 								</div>
 								<div class="product-body">
-									<p class="product-category">Category</p>
-									<h3 class="product-name"><a href="{{ route('produto', $registro->id) }}" tabindex="-1">{{ $registro->nome }}</a></h3>
-									<h4 class="product-price">R$ {{ number_format($registro->valor, 2, ',', '.' )}}<del class="product-old-price">R$ {{ number_format($registro->valor, 2, ',', '.' )}}</del></h4>
+									<p class="product-category"></p>
+									<h3 class="product-name"><a href="{{ route('produto', $lancamento->id) }}" tabindex="-1">{{ $lancamento->titulo }}</a></h3>
+									<h4 class="product-price">R$ {{ number_format($lancamento->valor, 2, ',', '.' )}}<del class="product-old-price">R$ {{ number_format($lancamento->valor, 2, ',', '.' )}}</del></h4>
 									<!--<div class="product-rating">
 										<i class="fa fa-star"></i>
 										<i class="fa fa-star"></i>
@@ -46,7 +46,7 @@
 								<div class="add-to-cart">
 									<form action="{{ route('carrinho.adicionar') }}" method="POST">
 										{{ csrf_field() }}
-										<input type="hidden" name="id" value="{{ $registro->id }}">
+										<input type="hidden" name="id" value="{{ $lancamento->id }}">
 										<button class="add-to-cart-btn" tabindex="-1"><i class="fa fa-shopping-cart" type="submit"></i>Adicionar ao carrinho</button>
 									</form>
 								</div>
@@ -67,84 +67,20 @@
 				<!-- row -->
 				<div class="row">
 					<!-- shop -->
+				@foreach($generos as $genero)
 					<div class="col-md-4 col-xs-6">
 						<div class="shop">
 							<div class="shop-img">
-								<img src="https://cdn.folhape.com.br/img/c/1200/900/dn_arquivo/2020/07/de-volta-para-o-futuro.jpeg" alt="">
+								<img src="{{ $genero->imagem }}" alt="">
 							</div>
 							<div class="shop-body">
-								<h3>Ação/<br>Aventura</h3>
+								<h3>{{ $genero->nome }}</h3>
 								<a href="#" class="cta-btn">Ver Filmes<i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 					</div>
 					<!-- /shop -->
-					<!-- shop -->
-					<div class="col-md-4 col-xs-6">
-						<div class="shop">
-							<div class="shop-img">
-								<img src="https://cdn.folhape.com.br/img/c/1200/900/dn_arquivo/2020/07/de-volta-para-o-futuro.jpeg" alt="">
-							</div>
-							<div class="shop-body">
-								<h3>Ação/<br>Aventura</h3>
-								<a href="#" class="cta-btn">Ver Filmes<i class="fa fa-arrow-circle-right"></i></a>
-							</div>
-						</div>
-					</div>
-					<!-- /shop -->
-					<!-- shop -->
-					<div class="col-md-4 col-xs-6">
-						<div class="shop">
-							<div class="shop-img">
-								<img src="https://cdn.folhape.com.br/img/c/1200/900/dn_arquivo/2020/07/de-volta-para-o-futuro.jpeg" alt="">
-							</div>
-							<div class="shop-body">
-								<h3>Ação/<br>Aventura</h3>
-								<a href="#" class="cta-btn">Ver Filmes<i class="fa fa-arrow-circle-right"></i></a>
-							</div>
-						</div>
-					</div>
-					<!-- /shop -->
-					<!-- shop -->
-					<div class="col-md-4 col-xs-6">
-						<div class="shop">
-							<div class="shop-img">
-								<img src="https://cdn.folhape.com.br/img/c/1200/900/dn_arquivo/2020/07/de-volta-para-o-futuro.jpeg" alt="">
-							</div>
-							<div class="shop-body">
-								<h3>Ação/<br>Aventura</h3>
-								<a href="#" class="cta-btn">Ver Filmes<i class="fa fa-arrow-circle-right"></i></a>
-							</div>
-						</div>
-					</div>
-					<!-- /shop -->
-					<!-- shop -->
-					<div class="col-md-4 col-xs-6">
-						<div class="shop">
-							<div class="shop-img">
-								<img src="https://cdn.folhape.com.br/img/c/1200/900/dn_arquivo/2020/07/de-volta-para-o-futuro.jpeg" alt="">
-							</div>
-							<div class="shop-body">
-								<h3>Ação/<br>Aventura</h3>
-								<a href="#" class="cta-btn">Ver Filmes<i class="fa fa-arrow-circle-right"></i></a>
-							</div>
-						</div>
-					</div>
-					<!-- /shop -->
-					<!-- shop -->
-					<div class="col-md-4 col-xs-6">
-						<div class="shop">
-							<div class="shop-img">
-								<img src="https://cdn.folhape.com.br/img/c/1200/900/dn_arquivo/2020/07/de-volta-para-o-futuro.jpeg" alt="">
-							</div>
-							<div class="shop-body">
-								<h3>Ação/<br>Aventura</h3>
-								<a href="#" class="cta-btn">Ver Filmes<i class="fa fa-arrow-circle-right"></i></a>
-							</div>
-						</div>
-					</div>
-					<!-- /shop -->
-					
+				@endforeach
 				</div>
 				<!-- /row -->
 
@@ -162,16 +98,16 @@
 				</p>
 				<!-- row -->
 				<div class="row">
-					@foreach($registros as $registro)
+					@foreach($destaques as $destaque)
 						<div class="col-md-3">
 							<div class="product"  style="width: 263px;">
 								<div class="product-img">
-									<img src="img/capas/vingadores.jpg" alt="">
+									<img src="{{$destaque->capa}}" alt="">
 								</div>
 								<div class="product-body">
-									<p class="product-category">Category</p>
-									<h3 class="product-name"><a href="{{ route('produto', $registro->id) }}" tabindex="-1">{{ $registro->nome }}</a></h3>
-									<h4 class="product-price">R$ {{ number_format($registro->valor, 2, ',', '.' )}}<del class="product-old-price">R$ {{ number_format($registro->valor, 2, ',', '.' )}}</del></h4>
+									<p class="product-category"></p>
+									<h3 class="product-name"><a href="{{ route('produto', $destaque->id) }}" tabindex="-1">{{ $destaque->titulo }}</a></h3>
+									<h4 class="product-price">R$ {{ number_format($destaque->valor, 2, ',', '.' )}}<del class="product-old-price">R$ {{ number_format($destaque->valor, 2, ',', '.' )}}</del></h4>
 									<!--<div class="product-rating">
 										<i class="fa fa-star"></i>
 										<i class="fa fa-star"></i>
@@ -189,7 +125,7 @@
 								<div class="add-to-cart">
 									<form action="{{ route('carrinho.adicionar') }}" method="POST">
 										{{ csrf_field() }}
-										<input type="hidden" name="id" value="{{ $registro->id }}">
+										<input type="hidden" name="id" value="{{ $destaque->id }}">
 										<button class="add-to-cart-btn" tabindex="-1"><i class="fa fa-shopping-cart" type="submit"></i>Adicionar ao carrinho</button>
 									</form>
 								</div>
@@ -220,10 +156,10 @@
 				</p>
 				<!-- row -->
 				<div class="row">
-					@foreach($registros as $registro)
+					@foreach($estudios as $estudio)
 						<div class="col-md-3">
 							<a href="">
-								<img src="img/estudios/marvel.png" alt="" width="200px">
+								<img src="{{ $estudio->logo }}" alt="" width="200px">
 							</a>
 						</div>
 					@endforeach
@@ -238,11 +174,14 @@
 						<img src="img/stormtrooper.png" alt="" width="60%">
 					</div>
 					<div class="col-md-6">
-						<p>
-							<b>PARADO AÍ</b>
-							Ainda não segue o Cine Store nas Redes Sociais? 
+						<div class="bloco-sociais">
+							<span>PARADO AÍ</span>
+							<p>
+								Ainda não segue o Cine Store nas Redes Sociais? 
 							Melhor você fazê-lo, se não vai ter que se explicar para o Imperador...
-						</p>
+							</p>
+						</div>
+						
 					</div>
 				</div>
 			</div>

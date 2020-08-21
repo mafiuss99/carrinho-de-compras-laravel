@@ -14,13 +14,21 @@ class CreateProdutosTable extends Migration
     public function up()
     {
         Schema::create('produtos', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nome');
-            $table->text('descricao');
+            $table->increments('id')->unsigned();
+            $table->string('titulo');
+            $table->text('sinopse');
             $table->decimal('valor', 6, 2)->default(0);
-            $table->string('imagem');
+            $table->string('capa');
+            $table->text('trailer');
+            $table->integer('ano');
             $table->enum('ativo', ['S', 'N'])->default('S');
+            $table->enum('destaque', ['S', 'N'])->default('N');
+            $table->enum('lancamento', ['S', 'N'])->default('N');
+            $table->integer('estudio_id')->unsigned(); // usigned: somente inteiros positivos
+            $table->integer('classificacao')->default(0);
             $table->timestamps();
+            
+            $table->foreign('estudio_id')->references('id')->on('estudios');
         });
     }
 
